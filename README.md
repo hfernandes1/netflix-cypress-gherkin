@@ -64,12 +64,11 @@ cypress open
 ```
 Irá baixar os diretórios necessários para você dar o start no projeto
 
-## 5 - NPX :link:
+## 5 - configurando package.json :link:
 
-```
-npx open cypress
+Environment             | 
+:-------------------------:
 
-```
 O NPX é o node package executor, ou seja, é responsável por executar os pacotes, para usá-lo, é só digitar npx e o que deseja executar. 
 
 ## Authors and acknowledgment
