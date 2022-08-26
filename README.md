@@ -66,15 +66,17 @@ Irá baixar os diretórios necessários para você dar o start no projeto
 
 ## 5 - configurando package.json :link:
 
-Environment             | 
+Environment               | 
 :-------------------------:
+
+
 
 O NPX é o node package executor, ou seja, é responsável por executar os pacotes, para usá-lo, é só digitar npx e o que deseja executar. 
 
 ## Authors and acknowledgment
 
-Ideia retirada da playlist do canal do youtube QAlizando! 
-https://www.youtube.com/channel/UC2N9bbpk7NcQhg3fFmEX7_A
+
+
 
 ## License
 open source project
