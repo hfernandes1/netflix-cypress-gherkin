@@ -108,32 +108,37 @@ Next, install two more dependencies ‘@bahmutov/cypress-esbuild-preprocessor’
 
 adicionei o specPattertn e a baseUrl ( nesse caso irei colocar o Netflix, que é o foco desse projeto pessoal )
 
-![image](https://user-images.githubusercontent.com/67130771/187009823-624c398c-629b-428a-8f5a-1c491ec1d9c7.png)
+![image](https://user-images.githubusercontent.com/67130771/187097552-07fbe553-03be-4b02-bf43-3b7b24a67569.png)
 
 Caso tenha informações contidas da versão passada ou não, retire todas e coloque a seguinte informação abaixo: 
 
 ```
-const createEsbuildPlugin =
-  require('@badeball/cypress-cucumber-preprocessor/esbuild').createEsbuildPlugin
-const createBundler = require('@bahmutov/cypress-esbuild-preprocessor')
-const nodePolyfills =
-  require('@esbuild-plugins/node-modules-polyfill').NodeModulesPolyfillPlugin
+const { defineConfig } = require("cypress");
+const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
 const addCucumberPreprocessorPlugin =
-  require('@badeball/cypress-cucumber-preprocessor').addCucumberPreprocessorPlugin
-module.exports = async (on, config) => {
-  await addCucumberPreprocessorPlugin(on, config) // to allow json to be produced
-  // To use esBuild for the bundler when preprocessing
-  on(
-    'file:preprocessor',
-    createBundler({
-      plugins: [nodePolyfills(), createEsbuildPlugin(config)],
-    })
-  )
-  return config
-}
+  require("@badeball/cypress-cucumber-preprocessor").addCucumberPreprocessorPlugin;
+const createEsbuildPlugin =
+  require("@badeball/cypress-cucumber-preprocessor/esbuild").createEsbuildPlugin;
 
+
+module.exports = defineConfig({
+  e2e: {
+    async setupNodeEvents(on, config) {
+      const bundler = createBundler({
+        plugins: [createEsbuildPlugin(config)],
+      });
+
+      on("file:preprocessor", bundler);
+      await addCucumberPreprocessorPlugin(on, config);
+
+      return config;
+    },
+    specPattern: "cypress/e2e/features/*.feature",
+    baseUrl: "https://www.netflix.com/",
+    chromeWebSecurity: false,
+  },
+});
 ```
-![image](https://user-images.githubusercontent.com/67130771/187009742-902aafc1-8cc7-44ee-9438-33ed752fffee.png)
 
 ## Configurando o 
 
