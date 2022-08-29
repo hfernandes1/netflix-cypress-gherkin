@@ -118,7 +118,7 @@ module.exports = defineConfig({
 });
 ```
 
-## Configurando o arquivo json 
+## Criando o arquivo json de configuração
 vamos criar um arquivo json que servira de base para passar as configurações do plugin com cucumber. 
 
 Crie um arquivo dentro da raiz chamado " .cypress-cucumber-preprocessorrc.json "
