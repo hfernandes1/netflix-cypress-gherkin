@@ -75,7 +75,12 @@ package.json               |
 npm run cypress:open
 ```
 
-Após a modificação no package.json, com esse comando, será possível executar o cypress e por default irá adicionar alguns packages necessa´rios para executar o projeto. Após abrir o cypress, clique em E2e testing , chrome, start e2e testing.
+Após a modificação no package.json, com esse comando, será possível executar o cypress e por default.
+
+Ao executar esse comando, será adicionado alguns packages necessários para executar o projeto. 
+* Clique em E2e testing 
+* Chrome
+* Start e2e testing.
 
 ## 4 - configure o cypress.config.js
 
