@@ -8,6 +8,9 @@ O Objetivo deste projeto é criar um exemplo, manter meus conhecimentos atualiza
 Vou tentar passar um passo a passo para vocês poderem construir o código de vocês, e também utilizar a nova versão do CYPRESS 10 que mudou alguns diretórios e está dando um nó na cabeça de muita gente, no fim, vou deixar os comandos para quem apenas deseja rodar os testes e ver funcionando. Lembre-se a unica coisa que você irá precisar mudar caso queria ver funcionando é seu email e senha do netflix. Tks ! 
 
 
+## Fotos do projeto
+
+
 ## Passo a passo :foot:
 
 Vamos começar com o passo a passo para você fazer o seu também ?
@@ -146,6 +149,29 @@ Vamos começar a criar as pastas para realizar os testes, eu criei da seguinte f
 
 ![image](https://user-images.githubusercontent.com/67130771/187009940-470b5237-1cbf-448f-8c6e-f883293dec67.png)
 
+## Criando  um Page obejcts. 
+
+Relembrando: Um page objects é uma classe orientada a objetos que serve como interface para uma página do seu AUT. 🙂
+
+O primeiro passo é criar um pasta e um arquivo JS chamado "elements.js" dentro de "cypress". 
+
+![image](https://user-images.githubusercontent.com/67130771/188202699-b11ca3a4-26bd-41a5-9ade-64a137c90f7a.png)
+
+Notem que criei uma constante chamado elements e dividi os elementos da pagina utilizado a label LOGIN. Por fim, finalizei com o comando export default elements;
+
+O próximo passo é passar o caminho em dois arquivos, veja abaixo: 
+
+e2e.js            |   login.js ( step definition )           | 
+:-------------------------: | :-------------------------:
+![image](https://user-images.githubusercontent.com/67130771/188203087-55e0e57b-6679-426e-8786-bbc7a87fc963.png) | ![image](https://user-images.githubusercontent.com/67130771/188203280-1c33f550-860d-4444-a3c6-3c8dce8225be.png)
+
+Para usar é simples, após fazer a referência nos arquivos anteriores, é só escrever a variável que foi criada, a label que você fez a divisão e o nome do elemento
+dessa maneira: 
+
+
+e2e.js            |  
+:-------------------------: | 
+![image](https://user-images.githubusercontent.com/67130771/188203674-3f57757e-6066-4332-af78-fdb51023e3d3.png)
 
 
 ## License
