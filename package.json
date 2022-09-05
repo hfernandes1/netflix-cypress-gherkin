@@ -1,0 +1,29 @@
+{
+  "name": "netflix-cypress-gherkin",
+  "version": "1.0.0",
+  "description": "Project simulating an automated testing using gherkin and Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hfernandes1/netflix-cypress-gherkin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hfernandes1/netflix-cypress-gherkin/issues"
+  },
+  "homepage": "https://github.com/hfernandes1/netflix-cypress-gherkin#readme",
+  "dependencies": {
+    "cypress": "^10.6.0"
+  },
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^12.1.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.3",
+    "@esbuild-plugins/node-modules-polyfill": "^0.1.4"
+  }
+}
