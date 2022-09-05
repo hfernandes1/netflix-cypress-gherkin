@@ -8,7 +8,11 @@ O Objetivo deste projeto é criar um exemplo, manter meus conhecimentos atualiza
 Vou tentar passar um passo a passo para vocês poderem construir o código de vocês, e também utilizar a nova versão do CYPRESS 10 que mudou alguns diretórios e está dando um nó na cabeça de muita gente, no fim, vou deixar os comandos para quem apenas deseja rodar os testes e ver funcionando. Lembre-se a unica coisa que você irá precisar mudar caso queria ver funcionando é seu email e senha do netflix. Tks ! 
 
 
-## Fotos do projeto
+## Fotos do projeto 📸
+
+login.feature           |   login.js ( step definition )           | 
+:-------------------------: | :-------------------------:
+![image](https://user-images.githubusercontent.com/67130771/188499657-6423d4c8-15fa-4bd0-b0d5-cca681c74561.png) | ![image](https://user-images.githubusercontent.com/67130771/188499684-f2134cff-fd39-417b-9323-73c854336de8.png)
 
 
 ## Passo a passo :foot:
@@ -18,14 +22,14 @@ Vamos começar com o passo a passo para você fazer o seu também ?
 
 <!-- Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)! -->
 
-## 1 - instalar o Nodejs :diamonds:
+## 1 - instalar o Nodejs ⏬
 
 ```
 https://nodejs.org/en/
 ```
 Você pode usar outros gerenciadores de pacodes como o cmder, mas gosto do node e vou passar os stepts utilizando o comando "npm"
 
-## 2 - Crie o projeto node
+## 2 - Crie o projeto node 🔝
 
 ```
 npm init --yes
@@ -45,7 +49,7 @@ Caso deseje instalar a ultima versão, é só rodar o comando acima.
 
 
 
-## 4 - isntalando o cucumber 
+## 4 - isntalando o cucumber 🥒
 
 
 Caso você já possua a integração com a versão antiga, desinstale com o comando `npm uninstall cypress-cucumber-preprocessor` This is because the repository has moved from github.com/TheBrainFamily to github.com/badeball. So now the cypress-cucumber repository is managed/developed by a different author. The new author has made new architectural changes to the plugin, so the best way to implement the plugin in the existing project is to do it from scratch.
@@ -64,7 +68,7 @@ Next, install two more dependencies ‘@bahmutov/cypress-esbuild-preprocessor’
 `npm install -D @esbuild-plugins/node-modules-polyfill`
 
 
-## 5 - configurando package.json :link:
+## 5 - configurando package.json 📦
 
 package.json               | 
 :-------------------------:
@@ -72,7 +76,7 @@ package.json               |
 
 
 
-## 4 - criando as primeiras pastas :open_file_folder:
+## 6 - criando as primeiras pastas :open_file_folder:
 
 ```
 npm run cypress:open
@@ -85,7 +89,7 @@ Ao executar esse comando, será adicionado alguns packages necessários para exe
 * Chrome
 * Start e2e testing.
 
-## 4 - configure o cypress.config.js
+## 7 - configure o cypress.config.js ⚙️
 
 adicionei o specPattertn e a baseUrl ( nesse caso irei colocar o Netflix, que é o foco desse projeto pessoal )
 
@@ -121,7 +125,7 @@ module.exports = defineConfig({
 });
 ```
 
-## Criando o arquivo json de configuração
+## 8 - Criando o arquivo json de configuração 💢
 vamos criar um arquivo json que servira de base para passar as configurações do plugin com cucumber. 
 
 Crie um arquivo dentro da raiz chamado " .cypress-cucumber-preprocessorrc.json "
@@ -143,13 +147,13 @@ contendo as seguintes infos:
 }
 ``` 
 
-## Criar os diretórios para realizar os testes. 
+## 9 - Criar os diretórios para realizar os testes. 📁
 
 Vamos começar a criar as pastas para realizar os testes, eu criei da seguinte forma: 
 
 ![image](https://user-images.githubusercontent.com/67130771/187009940-470b5237-1cbf-448f-8c6e-f883293dec67.png)
 
-## Criando  um Page obejcts. 
+## 10 - Criando  um Page obejcts. 
 
 Relembrando: Um page objects é uma classe orientada a objetos que serve como interface para uma página do seu AUT. 🙂
 
@@ -174,8 +178,18 @@ e2e.js            |
 ![image](https://user-images.githubusercontent.com/67130771/188203674-3f57757e-6066-4332-af78-fdb51023e3d3.png)
 
 
-## License
-open source project
+
+## 11 - Usando Tags ⚠️
+Caso queira rodar apenas um teste em específico, adicione tags da seguinte maneira:
+
+Exemplo de tags             |   Executing           | 
+:-------------------------: | :-------------------------:
+![image](https://user-images.githubusercontent.com/67130771/188498680-8f931bd6-f5d5-400d-a09f-0603473bb460.png) | ![image](https://user-images.githubusercontent.com/67130771/188498651-715d6144-9ded-4b3a-a172-fff654ebe064.png)
+
+
+Use o comando `λ npx cypress run --env tags="@TAGNAME"` para executar a tag. 
+Após rodar esse comando, o cypress irá rodar somente o teste tagiago, além de gerar um vídeo mp4 com a gravação da execução do teste. 
+
 
 ## Project status
 DONE :)
