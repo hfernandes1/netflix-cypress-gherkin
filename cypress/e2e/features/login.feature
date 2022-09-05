@@ -20,17 +20,22 @@ Scenario: Sucess Login
 @invalid-login
 Scenario: Invalid parameters
     When An user click on sign in button
-    And enters the username
-    And fill the password
+    And enters the invalid username
+    And fill the invalid password
     And clicks on the login button
-    Then the url will contains the inventory subdirectory
+    Then the system will return the error message
 
-# Scenario Outline: User enters invalid credentials
-#     When A user enters whith an invalid credentials - incorrect "<username>" or "<password>"
-#     And Click on the action button
-#     Then system will return an "alert"
+@blank-field
+Scenario Outline: blank fields
+    When An user click on sign in button
+    And enters the blank "<username>" or "<password>"
+    And clicks on the login button
+    Then display the "<alert>"
 
-#   Examples:
-#     | username                            | password |
-#     | hfernandes1@lenovo.com              | Home1234 |
-#     | palmeirasmelhordaamerica@lenovo.com | Casa1234 |
+Examples:
+    | username         | password  | alert                                                  |
+    | Henrique Amaral  | pas       | Your password must contain between 4 and 60 characters.|
+    | Hen              | password  | Please enter a valid email.                            |
+    | NULL             | password  | Please enter a valid email or phone number.            |                       
+    | Henrique         | NULL      | Your password must contain between 4 and 60 characters.|             
+
