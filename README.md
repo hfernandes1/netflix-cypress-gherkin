@@ -15,6 +15,12 @@ login.feature           |   login.js ( step definition )           |
 ![image](https://user-images.githubusercontent.com/67130771/188499657-6423d4c8-15fa-4bd0-b0d5-cca681c74561.png) | ![image](https://user-images.githubusercontent.com/67130771/188499684-f2134cff-fd39-417b-9323-73c854336de8.png)
 
 
+reports       |   reports-dark mode         | 
+:-------------------------: | :-------------------------:
+![image](https://user-images.githubusercontent.com/67130771/188727473-dce654a4-39c0-446a-b2c2-ebef702a895f.png) | ![image](https://user-images.githubusercontent.com/67130771/188727398-4698667d-c046-4b89-ac78-70a7bd18115b.png)
+
+
+
 ## Passo a passo :foot:
 
 Vamos começar com o passo a passo para você fazer o seu também ?
