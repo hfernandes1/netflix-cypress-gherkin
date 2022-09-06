@@ -200,19 +200,22 @@ Para criar relatórios de execução vamos rodar alguns passos:
 ![image](https://user-images.githubusercontent.com/67130771/188696881-aee4957b-6316-4fa2-82cb-cbc20b92c9ef.png)
 
 2 - Faça o download do JSON formatter ( que basicamente irá converter mensagens cucumber em documento JSON )  
-Link :link: : It can be downloaded from GitHub Releases where you'll find executables for various operating systems and CPU architectures.
+Link :link: : Ele pode ser baixado do GitHub Releases, onde você encontrará executáveis para vários sistemas operacionais e arquiteturas de CPU.
 https://github.com/cucumber/json-formatter/releases/tag/v19.0.0
 
 
 ```
-Download cucumber-json-formatter-windows-amd64 and rename it to cucumber-json-formatter.exe
-Move it to a directory that's on your PATH
-Verify that you can run it: cucumber-json-formatter --help
+Baixe cucumber-json-formatter-windows-amd64 e renomeie-o para cucumber-json-formatter.exe
+Mova-o para um diretório que esteja no seu PATH
+Verifique se você pode executá-lo: cucumber-json-formatter --help
+
 
 ``` 
-Colocando o executavel no projeto          | 
+
+Colocando o executável no projeto          | 
 :-------------------------: | 
 ![image](https://user-images.githubusercontent.com/67130771/188718269-358449ff-100c-46c8-87da-eb4d78df3fdf.png)
+
 
 4 - rode o comando para instalar o plugin
 
@@ -263,7 +266,13 @@ report.generate({
 `node ./cucumber-html-reports.js`
  Isso irá gerar o index.html com base no jsonlogs. 
 
-`Obs: Caso queira atualizar, rode o comando npx cypress run e depois o comando node. novamente`
+`Obs: Caso queira atualizar, rode os comandos
+
+`npx cypress run`
+
+e depois o comando 
+
+`node ./cucumber-html-reports.js` novamente
  
 
 
