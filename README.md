@@ -190,6 +190,83 @@ Exemplo de tags             |   Executing           |
 Use o comando `λ npx cypress run --env tags="@TAGNAME"` para executar a tag. 
 Após rodar esse comando, o cypress irá rodar somente o teste tagiago, além de gerar um vídeo mp4 com a gravação da execução do teste. 
 
+## 12 - Criando um REPORTS - CYPRESS 10+ 
+Para criar relatórios de execução vamos rodar alguns passos:
+
+1 - Adicionar algumas configurações no arquivo ".cypress-cucumber-preprocessorrc.js": 
+
+.cypress-cucumber-preprocessorrc.js          | 
+:-------------------------: | 
+![image](https://user-images.githubusercontent.com/67130771/188696881-aee4957b-6316-4fa2-82cb-cbc20b92c9ef.png)
+
+2 - Faça o download do JSON formatter ( que basicamente irá converter mensagens cucumber em documento JSON )  
+Link :link: : It can be downloaded from GitHub Releases where you'll find executables for various operating systems and CPU architectures.
+https://github.com/cucumber/json-formatter/releases/tag/v19.0.0
+
+
+```
+Download cucumber-json-formatter-windows-amd64 and rename it to cucumber-json-formatter.exe
+Move it to a directory that's on your PATH
+Verify that you can run it: cucumber-json-formatter --help
+
+``` 
+Colocando o executavel no projeto          | 
+:-------------------------: | 
+![image](https://user-images.githubusercontent.com/67130771/188718269-358449ff-100c-46c8-87da-eb4d78df3fdf.png)
+
+4 - rode o comando para instalar o plugin
+
+```
+npm i multiple-cucumber-html-reporter
+
+```
+
+5 - crie um diretório chamado "cucumber-html-report.js e preencha as seguintes infos: 
+
+Utilize como base as infos desse site: https://www.npmjs.com/package/multiple-cucumber-html-reporter
+
+
+```
+const report = require('multiple-cucumber-html-reporter');
+
+report.generate({
+	jsonDir: './path-to-your-json-output/',
+	reportPath: './path-where-the-report-needs-to-be/',
+	metadata:{
+        browser: {
+            name: 'chrome',
+            version: '60'
+        },
+        device: 'Local test machine',
+        platform: {
+            name: 'ubuntu',
+            version: '16.04'
+        }
+    },
+    customData: {
+        title: 'Run info',
+        data: [
+            {label: 'Project', value: 'Custom project'},
+            {label: 'Release', value: '1.2.3'},
+            {label: 'Cycle', value: 'B11221.34321'},
+            {label: 'Execution Start Time', value: 'Nov 19th 2017, 02:31 PM EST'},
+            {label: 'Execution End Time', value: 'Nov 19th 2017, 02:56 PM EST'}
+        ]
+    }
+});
+```
+![image](https://user-images.githubusercontent.com/67130771/188725097-05e77582-ec5e-4e9f-96ce-daecb467701d.png)
+
+
+6 - Rode o comando 
+
+`node ./cucumber-html-reports.js`
+ Isso irá gerar o index.html com base no jsonlogs. 
+
+`Obs: Caso queira atualizar, rode o comando npx cypress run e depois o comando node. novamente`
+ 
+
+
 
 ## Project status
 DONE :)
