@@ -21,9 +21,7 @@ pipeline {
 
         agent {
             // this image provides everything needed to run Cypress
-            docker {
-            image 'cypress/base:10'
-            }
+            docker {image 'cypress/base:10'}
         }
             steps{
                  bat "npm install cypress"
