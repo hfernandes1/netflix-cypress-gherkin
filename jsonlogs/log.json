@@ -13,7 +13,7 @@
             "line": 10,
             "name": "A user enter on Netflix page",
             "result": {
-              "duration": 9068000000,
+              "duration": 7937000000,
               "status": "passed"
             },
             "match": {
@@ -35,7 +35,7 @@
             "line": 30,
             "name": "An user click on sign in button",
             "result": {
-              "duration": 4645000000,
+              "duration": 9076000000,
               "status": "passed"
             },
             "match": {
@@ -47,7 +47,7 @@
             "line": 31,
             "name": "enters the blank \"Henrique Amaral\" or \"pas\"",
             "result": {
-              "duration": 4023000000,
+              "duration": 2534000000,
               "status": "passed"
             },
             "match": {
@@ -59,7 +59,7 @@
             "line": 32,
             "name": "clicks on the login button",
             "result": {
-              "duration": 386000000,
+              "duration": 481000000,
               "status": "passed"
             },
             "match": {
@@ -71,7 +71,7 @@
             "line": 33,
             "name": "display the \"Your password must contain between 4 and 60 characters.\"",
             "result": {
-              "duration": 603000000,
+              "duration": 739000000,
               "status": "passed"
             },
             "match": {
@@ -98,7 +98,7 @@
             "line": 10,
             "name": "A user enter on Netflix page",
             "result": {
-              "duration": 4908000000,
+              "duration": 3209000000,
               "status": "passed"
             },
             "match": {
@@ -120,7 +120,7 @@
             "line": 30,
             "name": "An user click on sign in button",
             "result": {
-              "duration": 9998000000,
+              "duration": 4297000000,
               "status": "passed"
             },
             "match": {
@@ -132,7 +132,7 @@
             "line": 31,
             "name": "enters the blank \"Hen\" or \"password\"",
             "result": {
-              "duration": 1450000000,
+              "duration": 1414000000,
               "status": "passed"
             },
             "match": {
@@ -144,7 +144,7 @@
             "line": 32,
             "name": "clicks on the login button",
             "result": {
-              "duration": 1446000000,
+              "duration": 480000000,
               "status": "passed"
             },
             "match": {
@@ -156,7 +156,7 @@
             "line": 33,
             "name": "display the \"Please enter a valid email.\"",
             "result": {
-              "duration": 563000000,
+              "duration": 660000000,
               "status": "passed"
             },
             "match": {
@@ -183,7 +183,7 @@
             "line": 10,
             "name": "A user enter on Netflix page",
             "result": {
-              "duration": 5227000000,
+              "duration": 3838000000,
               "status": "passed"
             },
             "match": {
@@ -205,7 +205,7 @@
             "line": 30,
             "name": "An user click on sign in button",
             "result": {
-              "duration": 6920000000,
+              "duration": 5259000000,
               "status": "passed"
             },
             "match": {
@@ -217,7 +217,7 @@
             "line": 31,
             "name": "enters the blank \"NULL\" or \"password\"",
             "result": {
-              "duration": 1142000000,
+              "duration": 886000000,
               "status": "passed"
             },
             "match": {
@@ -229,7 +229,7 @@
             "line": 32,
             "name": "clicks on the login button",
             "result": {
-              "duration": 571000000,
+              "duration": 643000000,
               "status": "passed"
             },
             "match": {
@@ -241,7 +241,7 @@
             "line": 33,
             "name": "display the \"Please enter a valid email or phone number.\"",
             "result": {
-              "duration": 845000000,
+              "duration": 538000000,
               "status": "passed"
             },
             "match": {
@@ -268,7 +268,7 @@
             "line": 10,
             "name": "A user enter on Netflix page",
             "result": {
-              "duration": 5008000000,
+              "duration": 2882000000,
               "status": "passed"
             },
             "match": {
@@ -290,7 +290,7 @@
             "line": 30,
             "name": "An user click on sign in button",
             "result": {
-              "duration": 7737000000,
+              "duration": 3847000000,
               "status": "passed"
             },
             "match": {
@@ -302,7 +302,7 @@
             "line": 31,
             "name": "enters the blank \"Henrique\" or \"NULL\"",
             "result": {
-              "duration": 1115000000,
+              "duration": 1076000000,
               "status": "passed"
             },
             "match": {
@@ -314,7 +314,7 @@
             "line": 32,
             "name": "clicks on the login button",
             "result": {
-              "duration": 1507000000,
+              "duration": 604000000,
               "status": "passed"
             },
             "match": {
@@ -326,7 +326,7 @@
             "line": 33,
             "name": "display the \"Your password must contain between 4 and 60 characters.\"",
             "result": {
-              "duration": 602000000,
+              "duration": 685000000,
               "status": "passed"
             },
             "match": {
