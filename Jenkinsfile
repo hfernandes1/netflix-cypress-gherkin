@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Testing'){
             steps{
-                bat "npn i"
+                bat "npm i"
                 bat "npx cypress run --env tags="${TAGS}" --browser ${BROWSER} --spec ${SPEC}"
             }
         }
