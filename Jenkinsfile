@@ -1,6 +1,6 @@
 pipeline {
-    
-    ignore_unreachable: yes 
+
+
     agent any
 
     parameters{
