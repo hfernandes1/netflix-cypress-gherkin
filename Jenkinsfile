@@ -8,10 +8,10 @@ pipeline {
         choice(name: 'TAGS', ['@blank-field', '@invalid-login', '@successfull-login'], description: "Choice the test that you wanna run")
     }
 
-    options{
-        ansiColor('xterm')
+    // options{
+    //     ansiColor('xterm')
 
-    }
+    // }
 
     stages{
 
