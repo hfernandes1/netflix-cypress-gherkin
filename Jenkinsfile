@@ -1,0 +1,36 @@
+pipeline {
+
+    agent any
+
+    parameters{
+        string(name: 'SPEC', dedfaultvalue: "cypress/e2e/**/**", description: "Enter the scripts path that you want to execute")
+        choice(name: 'BROWSER', ['chrome','edge', 'firefox'], description: "Choice the browser where you want to execute your scripts")
+        choice(name: 'TAGS', ['@blank-field', '@invalid-login', '@successfull-login'], description: "Choice the test that you wanna run")
+    }
+
+    options{
+        ansiColor('xterm')
+
+    }
+
+    stages{
+
+        stage ('Building'){
+            echo "Building the application"
+        }
+        stage('Testing'){
+            steps{
+                bat "npn i"
+                bat "npx cypress run --env tags="${TAGS}" --browser ${BROWSER} --spec ${SPEC}"
+            }
+        }
+        stage ('Deploying'){
+            echo "Deploying the application"
+        }
+    }
+
+    always{
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/report', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+        cucumber buildStatus: 'null', customCssFiles: '', customJsFiles: '', failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, reportTitle: 'reports-cucumber', skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
+    }
+}
