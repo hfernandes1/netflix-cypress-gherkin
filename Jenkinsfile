@@ -23,6 +23,7 @@ pipeline {
         }
         stage("Testing"){
             steps {
+                bat "npm install cypress"
                 bat "npm i"
                 bat "npx cypress run --env tags=@blank-field --browser ${BROWSER} --spec ${SPEC}"
             }
