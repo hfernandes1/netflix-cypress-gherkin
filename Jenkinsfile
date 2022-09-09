@@ -1,8 +1,6 @@
 pipeline {
 
-    agent {
-        docker
-    }
+    agent any
 
     parameters{
         string(name: 'SPEC', defaultValue: "cypress/e2e/**/**", description: "Enter the scripts path that you want to execute")
@@ -18,6 +16,11 @@ pipeline {
     stages{
 
         stage ('Building'){
+
+            agent {
+                docker
+            }
+            
             steps{
                 echo "Building the application"
             }
