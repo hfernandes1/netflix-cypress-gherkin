@@ -17,13 +17,11 @@ pipeline {
 
         stage ('Building'){
 
-            agent {
-                docker
-            }
-            
-            steps{
-                echo "Building the application"
-            }
+        agent {
+
+            docker { image 'node:18-alpine'}
+
+        }
          
         }
         stage("Testing"){
