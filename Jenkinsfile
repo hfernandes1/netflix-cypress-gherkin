@@ -21,10 +21,10 @@ pipeline {
             }
          
         }
-        stage('Testing'){
-            steps{
+        stage("Testing"){
+            steps {
                 bat "npm i"
-                bat "npx cypress run --env tags="${TAGS}" --browser ${BROWSER} --spec ${SPEC}"
+                bat "npx cypress run --env tags=@blank-field --browser ${BROWSER} --spec ${SPEC}"
             }
         }
         stage ('Deploying'){
