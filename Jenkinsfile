@@ -1,6 +1,8 @@
 pipeline {
 
-    agent any
+    agent {
+        docker
+    }
 
     parameters{
         string(name: 'SPEC', defaultValue: "cypress/e2e/**/**", description: "Enter the scripts path that you want to execute")
@@ -25,7 +27,11 @@ pipeline {
             steps {
                 bat "npm install cypress"
                 bat "npm i"
-                bat "npx cypress run --env tags=@blank-field --browser ${BROWSER} --spec ${SPEC}"
+                bat "npx cypress run --env tags=${TAGS} --browser ${BROWSER} --spec ${SPEC}"
+                bat "npm i multiple-cucumber-html-reporter"
+                bat "node ./cucumber-html-reports.js"
+
+                archiveArtifacts artifacts: 'reports/'
             }
         }
         stage ('Deploying'){
@@ -36,10 +42,5 @@ pipeline {
         }
     }
 
-    post{
-            always{
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/report', reportFiles: 'index1.html', reportName: 'HTML Report', reportTitles: ''])
-        }
-    }
 
 }
