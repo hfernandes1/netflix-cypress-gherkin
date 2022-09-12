@@ -44,6 +44,14 @@ pipeline {
             }
         
         }
+
+p        post {
+        // shutdown the server running in the background
+        always {
+        echo 'Stopping local server'
+        bat 'pkill -f http-server'
+    }
+        }
     }
 
 }
