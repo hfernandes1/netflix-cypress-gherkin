@@ -18,26 +18,16 @@ pipeline {
 
         stage ('Building'){
             
-
-        agent {
-            // this image provides everything needed to run Cypress
-            docker {image 'cypress/base:10'}
-        }
             steps{
-                 bat "npm install cypress"
-                bat "npm i"
-                bat "npx cypress run --env tags=${TAGS} --browser ${BROWSER} --spec ${SPEC}"
-                bat "npm i multiple-cucumber-html-reporter"
-                bat "node ./cucumber-html-reports.js"
-
-                archiveArtifacts artifacts: 'reports/'
+                echo "Deploying the application"
             }
         
          
         }
         stage("Testing"){
             steps {
-                echo "Testing the application"
+                echo "Deploying the application"
+            }
             }
         }
         stage ('Deploying'){
