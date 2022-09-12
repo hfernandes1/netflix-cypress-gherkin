@@ -22,7 +22,8 @@ pipeline {
 
         agent {
     // this image provides everything needed to run Cypress
-            docker { image 'cypress/included:9.4.1'}
+            docker { image 'cypress/included:9.4.1'
+            args '--entrypoint='}
         }
 
             
