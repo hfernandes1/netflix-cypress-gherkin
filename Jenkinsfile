@@ -30,7 +30,7 @@ pipeline {
                 bat "npm install"
                 bat "npm install cypress"
                 bat "npm i"
-                bat "npx cypress run:headless --env tags=${TAGS} --browser ${BROWSER} --spec ${SPEC}"
+                bat "npx cypress --env tags=${TAGS} --browser ${BROWSER} --spec ${SPEC}"
                 bat "npm i multiple-cucumber-html-reporter"
                 bat "node ./cucumber-html-reports.js"
 
@@ -51,7 +51,7 @@ pipeline {
         // shutdown the server running in the background
             always {
             echo 'Stopping local server'
-            bat 'pkill -f http-server'
+            bat 'taskkill -f http-server'
             }
         }
     
