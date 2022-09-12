@@ -29,7 +29,7 @@ pipeline {
                 echo "Deploying the application"
             }
             }
-        }
+        
         stage ('Deploying'){
             steps{
                 echo "Deploying the application"
@@ -37,5 +37,5 @@ pipeline {
         
         }
     }
-
+}
 
