@@ -7,7 +7,7 @@ pipeline {
     }
 
     parameters{
-        string(name: 'SPEC', defaultValue: "cypress/e2e/**/**", description: "Enter the scripts path that you want to execute")
+        // string(name: 'SPEC', defaultValue: "cypress/e2e/**/**", description: "Enter the scripts path that you want to execute")
         choice(name: 'BROWSER', choices: ['chrome','edge', 'firefox'], description: "Choice the browser where you want to execute your scripts")
         choice(name: 'TAGS', choices: ['@blank-field', '@invalid-login', '@successfull-login'], description: "Choice the test that you wanna run")
     }
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 sh "npm version"
                 sh "npm install -g cypress --unsafe-perm --silent"
-                sh "npx cypress run --env tags=${TAGS} --browser ${BROWSER} --spec ${SPEC}"
+                sh "npx cypress run --env tags=${TAGS} --browser ${BROWSER} --spec cypress/e2e/**/**"
                 sh "npm i multiple-cucumber-html-reporter"
                 sh "node ./cucumber-html-reports.js"
 
