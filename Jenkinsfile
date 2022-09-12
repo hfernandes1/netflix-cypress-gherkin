@@ -16,10 +16,7 @@ pipeline {
 
     stages{
         stage ('Building'){
-
-        ef dockerHome = tool 'myDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-
+            
         agent {
     // this image provides everything needed to run Cypress
             docker { image 'cypress/base:10'}
