@@ -51,7 +51,7 @@ pipeline {
         // shutdown the server running in the background
             always {
             echo 'Stopping local server'
-            // bat 'taskkill -f http-server'
+            bat 'taskkill /F /PID 3564'
             }
         }
     
