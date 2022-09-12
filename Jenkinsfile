@@ -2,6 +2,9 @@ pipeline {
 
 
     agent any
+    tools {
+        nodejs '18.9.0'
+    }
 
     parameters{
         string(name: 'SPEC', defaultValue: "cypress/e2e/**/**", description: "Enter the scripts path that you want to execute")
@@ -16,11 +19,12 @@ pipeline {
 
     stages{
         stage ('Building'){
-            
+
         agent {
     // this image provides everything needed to run Cypress
             docker { image 'cypress/base:10'}
         }
+
             
             steps{
 
@@ -31,6 +35,7 @@ pipeline {
         }
         stage("Testing"){
             steps {
+                sh "npm version"
                 sh "npm install"
                 sh "npm install cypress"
                 sh "npx cypress run --env tags=${TAGS} --browser ${BROWSER} --spec ${SPEC}"
