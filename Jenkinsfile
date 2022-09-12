@@ -15,10 +15,15 @@ pipeline {
     // }
 
     stages{
-
         stage ('Building'){
+
+        agent {
+    // this image provides everything needed to run Cypress
+            docker { image 'cypress/base:10'}
+        }
             
             steps{
+
                 echo "Deploying the application"
             }
         
@@ -26,16 +31,57 @@ pipeline {
         }
         stage("Testing"){
             steps {
-                echo "Deploying the application"
+                sh "npm install"
+                sh "npm install cypress"
+                sh "npx cypress run --env tags=${TAGS} --browser ${BROWSER} --spec ${SPEC}"
+                sh "npm i multiple-cucumber-html-reporter"
+                sh "node ./cucumber-html-reports.js"
+
+                archiveArtifacts artifacts: 'reports/'
             }
             }
-        
+    
         stage ('Deploying'){
             steps{
                 echo "Deploying the application"
             }
         
         }
-    }
-}
 
+        
+    }
+
+
+    //    post {
+    //     // shutdown the server running in the background
+    //         always {
+    //         echo 'Stopping local server'
+    //         bat 'taskkill /F /PID 3564'
+    //         }
+    //     }
+
+       post {
+       always {
+           echo "post always"
+           println("Number: ${currentBuild.number}")
+           println("Result: ${currentBuild.result}")
+           println("Display name: ${currentBuild.displayName}")
+           script {
+               text = "Result: ${currentBuild.result}"
+           }
+           println('----------')
+           println(currentBuild.getPreviousBuild())
+           println(currentBuild.getPreviousBuild().result)
+           println('----------')
+       }
+       success {
+           echo "post success"
+           echo text
+       }
+       failure {
+           echo "post failure"
+       }
+    }
+    
+
+}
