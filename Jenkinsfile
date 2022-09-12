@@ -19,6 +19,7 @@ pipeline {
         stage ('Building'){
             
             steps{
+
                 echo "Deploying the application"
             }
         
@@ -26,10 +27,17 @@ pipeline {
         }
         stage("Testing"){
             steps {
-                echo "Deploying the application"
+                bat "npm install"
+                bat "npm install cypress"
+                bat "npm i"
+                bat "npx cypress run:headless --env tags=${TAGS} --browser ${BROWSER} --spec ${SPEC}"
+                bat "npm i multiple-cucumber-html-reporter"
+                bat "node ./cucumber-html-reports.js"
+
+                archiveArtifacts artifacts: 'reports/'
             }
             }
-        
+    
         stage ('Deploying'){
             steps{
                 echo "Deploying the application"
@@ -37,5 +45,5 @@ pipeline {
         
         }
     }
-}
 
+}
