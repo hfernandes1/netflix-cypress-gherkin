@@ -36,7 +36,6 @@ pipeline {
         stage("Testing"){
             steps {
                 sh "npm version"
-                sh "sudo npm install --unsafe-perm=true --allow-root cypress"
                 sh "npm install cypress"
                 sh "npx cypress run --env tags=${TAGS} --browser ${BROWSER} --spec ${SPEC}"
                 sh "npm i multiple-cucumber-html-reporter"
