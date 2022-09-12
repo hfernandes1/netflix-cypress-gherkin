@@ -47,13 +47,36 @@ pipeline {
     }
 
 
+    //    post {
+    //     // shutdown the server running in the background
+    //         always {
+    //         echo 'Stopping local server'
+    //         bat 'taskkill /F /PID 3564'
+    //         }
+    //     }
+
        post {
-        // shutdown the server running in the background
-            always {
-            echo 'Stopping local server'
-            bat 'taskkill /F /PID 3564'
-            }
-        }
+       always {
+           echo "post always"
+           println("Number: ${currentBuild.number}")
+           println("Result: ${currentBuild.result}")
+           println("Display name: ${currentBuild.displayName}")
+           script {
+               text = "Result: ${currentBuild.result}"
+           }
+           println('----------')
+           println(currentBuild.getPreviousBuild())
+           println(currentBuild.getPreviousBuild().result)
+           println('----------')
+       }
+       success {
+           echo "post success"
+           echo text
+       }
+       failure {
+           echo "post failure"
+       }
+    }
     
 
 }
