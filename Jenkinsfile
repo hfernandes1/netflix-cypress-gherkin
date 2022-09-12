@@ -38,6 +38,8 @@ pipeline {
             steps {
                 sh "npm version"
                 sh "npm install -g cypress --unsafe-perm --allow-root"
+                sh 'npm config set user 0'
+                sh 'npm config set unsafe-perm true'
                 sh './node_modules/.bin/cypress run'
                 // sh "npx cypress run --env tags=${TAGS} --browser ${BROWSER}"
                 sh "npm i multiple-cucumber-html-reporter"
