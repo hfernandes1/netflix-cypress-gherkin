@@ -22,7 +22,7 @@ pipeline {
 
         agent {
     // this image provides everything needed to run Cypress
-            docker { image 'cypress/base:10'}
+            docker { image 'cypress/included:9.4.1'}
         }
 
             
@@ -36,7 +36,7 @@ pipeline {
         stage("Testing"){
             steps {
                 sh "npm version"
-                sh "npm install -g cypress --unsafe-perm --silent"
+                sh "npm install -g cypress --unsafe-perm --allow-root"
                 sh "npx cypress run --env tags=${TAGS} --browser ${BROWSER}"
                 sh "npm i multiple-cucumber-html-reporter"
                 sh "node ./cucumber-html-reports.js"
