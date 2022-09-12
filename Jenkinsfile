@@ -37,7 +37,7 @@ pipeline {
             steps {
                 sh "npm version"
                 sh "npm install -g cypress --unsafe-perm --silent"
-                sh "npx cypress run --env tags=${TAGS} --browser ${BROWSER} --spec cypress/e2e/**/**"
+                sh "npx cypress run --env tags=${TAGS} --browser ${BROWSER}"
                 sh "npm i multiple-cucumber-html-reporter"
                 sh "node ./cucumber-html-reports.js"
 
